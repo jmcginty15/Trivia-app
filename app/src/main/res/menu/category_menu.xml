@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/c9"
+        android:title="@string/category_9" />
+    <item
+        android:id="@+id/c10"
+        android:title="@string/category_10" />
+    <item
+        android:id="@+id/c11"
+        android:title="@string/category_11" />
+    <item
+        android:id="@+id/c12"
+        android:title="@string/category_12" />
+    <item
+        android:id="@+id/c13"
+        android:title="@string/category_13" />
+    <item
+        android:id="@+id/c14"
+        android:title="@string/category_14" />
+    <item
+        android:id="@+id/c15"
+        android:title="@string/category_15" />
+    <item
+        android:id="@+id/c16"
+        android:title="@string/category_16" />
+    <item
+        android:id="@+id/c17"
+        android:title="@string/category_17" />
+    <item
+        android:id="@+id/c18"
+        android:title="@string/category_18" />
+    <item
+        android:id="@+id/c19"
+        android:title="@string/category_19" />
+    <item
+        android:id="@+id/c20"
+        android:title="@string/category_20" />
+    <item
+        android:id="@+id/c21"
+        android:title="@string/category_21" />
+    <item
+        android:id="@+id/c22"
+        android:title="@string/category_22" />
+    <item
+        android:id="@+id/c23"
+        android:title="@string/category_23" />
+    <item
+        android:id="@+id/c24"
+        android:title="@string/category_24" />
+    <item
+        android:id="@+id/c25"
+        android:title="@string/category_25" />
+    <item
+        android:id="@+id/c26"
+        android:title="@string/category_26" />
+    <item
+        android:id="@+id/c27"
+        android:title="@string/category_27" />
+    <item
+        android:id="@+id/c28"
+        android:title="@string/category_28" />
+    <item
+        android:id="@+id/c29"
+        android:title="@string/category_29" />
+    <item
+        android:id="@+id/c30"
+        android:title="@string/category_30" />
+    <item
+        android:id="@+id/c31"
+        android:title="@string/category_31" />
+    <item
+        android:id="@+id/c32"
+        android:title="@string/category_32" />
+</menu>
