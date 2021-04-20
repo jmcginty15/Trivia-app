@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.NavHostFragment
 import com.example.trivia.R
 import com.example.trivia.databinding.GameFragmentBinding
 import com.example.trivia.ui.GameModel
@@ -131,14 +132,26 @@ class GameFragment : Fragment() {
 
     private fun checkAnswerOrNextQuestion() {
         if (answerChecked) {
-
+            if (mViewModel.currentGame.value?.currentQuestion!! > mViewModel.currentGame.value?.questionList?.size!!) {
+                endGame()
+            } else {
+                nextQuestion()
+            }
         } else {
             checkAnswer()
         }
     }
 
     private fun nextQuestion() {
+        isCorrect = false
         answerChecked = false
+        selectedIndex = 0
+        binding.answerButton.text = resources.getString(R.string.check_answer)
+        binding.answers.removeAllViews()
+        showQuestion(
+            mViewModel.currentGame.value?.currentQuestion!!,
+            mViewModel.currentGame.value!!
+        )
     }
 
     private fun checkAnswer() {
@@ -147,8 +160,16 @@ class GameFragment : Fragment() {
         val question = mViewModel.currentGame.value?.currentQuestion
 
         if (isCorrect) {
+            var multiplier =
+                when (mViewModel.currentGame.value?.questionList!![mViewModel.currentGame.value?.currentQuestion!! - 1].difficulty) {
+                    "easy" -> 1
+                    "medium" -> 2
+                    "hard" -> 3
+                    else -> 0
+                }
+
             binding.correctIncorrect.text = resources.getString(R.string.correct)
-            val newScore = score!!.plus(1)
+            val newScore = score!!.plus(multiplier * 1)
             mViewModel.currentGame.value?.currentScore = newScore
             binding.score.text = resources.getString(R.string.score, newScore.toString())
         } else {
@@ -174,7 +195,17 @@ class GameFragment : Fragment() {
 
         mViewModel.currentGame.value?.currentQuestion = question!!.plus(1)
 
-        binding.answerButton.text = resources.getString(R.string.next_question)
+        if (mViewModel.currentGame.value?.currentQuestion!! > mViewModel.currentGame.value?.questionList?.size!!) {
+            binding.answerButton.text = resources.getString(R.string.finish_game)
+        } else {
+            binding.answerButton.text = resources.getString(R.string.next_question)
+        }
+
         setButtonClickable(true)
+    }
+
+    private fun endGame() {
+        val navController = NavHostFragment.findNavController(this)
+        navController.navigate(R.id.action_game_fragment_to_complete_game_fragment)
     }
 }

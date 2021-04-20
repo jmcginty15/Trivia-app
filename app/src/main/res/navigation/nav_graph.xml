@@ -25,19 +25,14 @@
             app:destination="@+id/destination_order_details_fragment" />
     </fragment>
 
-    <!--    <fragment-->
-    <!--        android:id="@+id/destination_order_details_fragment"-->
-    <!--        android:name="com.example.shoppingcart3.ui.fragments.OrderDetailsFragment"-->
-    <!--        tools:layout="@layout/order_details_fragment">-->
+    <fragment
+        android:id="@+id/destination_order_details_fragment"
+        android:name="com.example.trivia.ui.fragments.CompleteGameFragment"
+        tools:layout="@layout/complete_game_fragment">
 
-    <!--        <action-->
-    <!--            android:id="@+id/order_details_fragment_cart_pop"-->
-    <!--            app:popUpTo="@id/destination_order_fragment"-->
-    <!--            app:popUpToInclusive="true" />-->
-
-    <!--        <action-->
-    <!--            android:id="@+id/order_details_fragment_order_pop"-->
-    <!--            app:popUpTo="@id/destination_order_details_fragment"-->
-    <!--            app:popUpToInclusive="true" />-->
-    <!--    </fragment>-->
+        <action
+            android:id="@+id/action_complete_game_fragment_pop"
+            app:popUpTo="@id/destination_game_fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

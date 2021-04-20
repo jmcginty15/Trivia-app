@@ -41,10 +41,16 @@
     <string name="question_title">Question %s of %s</string>
     <string name="check_answer">Check answer</string>
     <string name="next_question">Next question</string>
+    <string name="finish_game">Finish game</string>
     <string name="true_answer">True</string>
     <string name="false_answer">False</string>
     <string name="correct">Correct</string>
     <string name="incorrect">Incorrect</string>
     <string name="empty" />
     <string name="score">Score: %s</string>
+    <string name="final_score">Final score: %s</string>
+    <string name="game_over">Game Over</string>
+    <string name="new_game">New game</string>
+    <string name="questions_singular">1 question</string>
+    <string name="questions_plural">%s questions</string>
 </resources>
