@@ -68,7 +68,7 @@ class CreateGameFragment : Fragment() {
         mViewModel.type = type
         mViewModel.typeName = type
 
-        mViewModel.startGame(amount, category, difficulty, type)
+        mViewModel.startGame(amount, mViewModel.category, mViewModel.difficulty, mViewModel.type)
 
         val navController = NavHostFragment.findNavController(this)
         navController.navigate(R.id.action_create_game_fragment_to_game_fragment)

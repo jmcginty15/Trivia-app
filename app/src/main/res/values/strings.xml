@@ -38,4 +38,13 @@
     <string name="select_difficulty">Select Difficulty</string>
     <string name="select_type">Select Type</string>
     <string name="start_game">Start game</string>
+    <string name="question_title">Question %s of %s</string>
+    <string name="check_answer">Check answer</string>
+    <string name="next_question">Next question</string>
+    <string name="true_answer">True</string>
+    <string name="false_answer">False</string>
+    <string name="correct">Correct</string>
+    <string name="incorrect">Incorrect</string>
+    <string name="empty" />
+    <string name="score">Score: %s</string>
 </resources>
