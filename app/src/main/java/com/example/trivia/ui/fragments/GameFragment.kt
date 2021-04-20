@@ -16,6 +16,7 @@ import com.example.trivia.R
 import com.example.trivia.databinding.GameFragmentBinding
 import com.example.trivia.ui.GameModel
 import com.example.trivia.ui.MainViewModel
+import org.apache.commons.text.StringEscapeUtils
 import java.util.*
 
 class GameFragment : Fragment() {
@@ -63,7 +64,7 @@ class GameFragment : Fragment() {
         )
         binding.category.text = question.category
         binding.difficulty.text = question.difficulty.capitalize(Locale.ROOT)
-        binding.question.text = question.question
+        binding.question.text = StringEscapeUtils.unescapeHtml4(question.question)
         binding.correctIncorrect.text = resources.getString(R.string.empty)
 
         setButtonClickable(false)
@@ -81,7 +82,7 @@ class GameFragment : Fragment() {
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT
                 )
-                answerButton.text = answer
+                answerButton.text = StringEscapeUtils.unescapeHtml4(answer)
                 if (index == correctIndex) answerButton.id = 100
                 else answerButton.id = index
                 binding.answers.addView(answerButton)
