@@ -1,11 +1,15 @@
 package com.example.trivia.ui
 
 import android.app.Application
+import android.widget.ArrayAdapter
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.trivia.data.models.ResultsDTO
 import com.example.trivia.data.repositories.TriviaRepository
+import com.example.trivia.ui.menus.CATEGORY_MENU
+import com.example.trivia.ui.menus.DIFFICULTY_MENU
+import com.example.trivia.ui.menus.TYPE_MENU
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -14,6 +18,10 @@ import java.util.*
 class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val disposable = CompositeDisposable()
     private val triviaRepository = TriviaRepository()
+
+    var categoryMenuAdapter: ArrayAdapter<Any>? = null
+    var difficultyMenuAdapter: ArrayAdapter<Any>? = null
+    var typeMenuAdapter: ArrayAdapter<Any>? = null
 
     val currentGame: LiveData<GameModel>
         get() = _currentGame

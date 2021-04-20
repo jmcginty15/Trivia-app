@@ -3,7 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/destination_create_game_fragment">
+    app:startDestination="@id/destination_base_fragment">
+
+    <fragment
+        android:id="@+id/destination_base_fragment"
+        android:name="com.example.trivia.ui.fragments.BaseFragment"
+        tools:layout="@layout/base_fragment">
+
+        <action
+            android:id="@+id/action_base_fragment_to_create_game_fragment"
+            app:destination="@id/destination_create_game_fragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/destination_create_game_fragment"
@@ -32,7 +42,7 @@
 
         <action
             android:id="@+id/action_complete_game_fragment_pop"
-            app:popUpTo="@id/destination_game_fragment"
+            app:popUpTo="@id/destination_create_game_fragment"
             app:popUpToInclusive="true" />
     </fragment>
 </navigation>

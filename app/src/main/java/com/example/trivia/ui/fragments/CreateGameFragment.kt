@@ -30,14 +30,16 @@ class CreateGameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val categoryAdapter = getAdapter(CATEGORY_MENU)
-        (binding.categoryText as? AutoCompleteTextView)?.setAdapter(categoryAdapter)
+        if (mViewModel.categoryMenuAdapter == null) mViewModel.categoryMenuAdapter =
+            getAdapter(CATEGORY_MENU)
+        binding.categoryText.setAdapter(mViewModel.categoryMenuAdapter)
 
-        val difficultyAdapter = getAdapter(DIFFICULTY_MENU)
-        (binding.difficultyText as? AutoCompleteTextView)?.setAdapter(difficultyAdapter)
+        if (mViewModel.difficultyMenuAdapter == null) mViewModel.difficultyMenuAdapter =
+            getAdapter(DIFFICULTY_MENU)
+        binding.difficultyText.setAdapter(mViewModel.difficultyMenuAdapter)
 
-        val typeAdapter = getAdapter(TYPE_MENU)
-        (binding.typeText as? AutoCompleteTextView)?.setAdapter(typeAdapter)
+        if (mViewModel.typeMenuAdapter == null) mViewModel.typeMenuAdapter = getAdapter(TYPE_MENU)
+        binding.typeText.setAdapter(mViewModel.typeMenuAdapter)
 
         binding.startButton.setOnClickListener { startGame() }
     }
@@ -45,7 +47,7 @@ class CreateGameFragment : Fragment() {
     private fun getMenu(menuIds: List<Int>): List<String> {
         val menuStrings = arrayListOf<String>()
         for (item in menuIds) {
-            menuStrings.add(binding.root.resources.getString(item))
+            menuStrings.add(resources.getString(item))
         }
         return menuStrings
     }
