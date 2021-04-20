@@ -3,12 +3,12 @@ package com.example.trivia.ui
 import com.example.trivia.data.models.QuestionDTO
 
 class GameModel(
-    questions: Int,
-    questionList: List<QuestionDTO>,
-    category: String,
-    difficulty: String,
-    type: String,
-    currentQuestion: Int = 0,
-    currentScore: Int = 0
+    var questions: Int,
+    var questionList: List<QuestionDTO>,
+    var category: String,
+    var difficulty: String,
+    var type: String,
+    var currentQuestion: Int = 0,
+    var currentScore: Int = 0
 ) {
 }

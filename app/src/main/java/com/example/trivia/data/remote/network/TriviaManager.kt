@@ -21,7 +21,7 @@ class TriviaManager {
     ) = service.getQuestions(amount, category, difficulty, type)
 
     interface TriviaService {
-        @GET("/api.php")
+        @GET("api.php")
         fun getQuestions(
             @Query("amount") amount: String,
             @Query("category") category: String?,

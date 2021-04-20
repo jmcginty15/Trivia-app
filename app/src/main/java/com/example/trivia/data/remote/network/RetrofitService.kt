@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit
 
 class RetrofitService {
     private val TIMEOUT = 60 * 1000.toLong()
-    private val BASE_URL = "https://opentdb.com/api.php"
+    private val BASE_URL = "https://opentdb.com/"
 
     private fun providesOkHttpClient(): OkHttpClient {
         val httpLoggingInterceptor = HttpLoggingInterceptor(HttpLoggingInterceptor.Logger.DEFAULT)

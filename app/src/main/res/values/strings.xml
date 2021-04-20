@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Trivia</string>
     <string name="create_new_game">Create New Game</string>
+    <string name="any_category">Any Category</string>
     <string name="category_9">General Knowledge</string>
     <string name="category_10">Entertainment: Books</string>
     <string name="category_11">Entertainment: Film</string>
@@ -25,9 +26,11 @@
     <string name="category_30">Science: Gadgets</string>
     <string name="category_31">Entertainment: Japanese Anime &amp; Manga</string>
     <string name="category_32">Entertainment: Cartoon &amp; Animations</string>
+    <string name="any_difficulty">Any Difficulty</string>
     <string name="easy">Easy</string>
     <string name="medium">Medium</string>
     <string name="hard">Hard</string>
+    <string name="any_type">Any Type</string>
     <string name="multiple_choice">Multiple Choice</string>
     <string name="true_false">True / False</string>
     <string name="number_of_questions">Number of Questions</string>
